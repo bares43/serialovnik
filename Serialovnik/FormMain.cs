@@ -376,7 +376,7 @@ namespace Serialovnik
 
         private void about_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seriálovník\n\n27.6.2014\nJan Bareš\njanbares43@gmail.compokus");
+            MessageBox.Show("Seriálovník\n\n27.6.2014\nJan Bareš\njanbares43@gmail.com");
         }
     }
 }
