@@ -38,6 +38,7 @@
             this.repeat = new System.Windows.Forms.Button();
             this.about = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.previous = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // serials
@@ -106,7 +107,7 @@
             // repeat
             // 
             this.repeat.Enabled = false;
-            this.repeat.Location = new System.Drawing.Point(197, 70);
+            this.repeat.Location = new System.Drawing.Point(197, 99);
             this.repeat.Name = "repeat";
             this.repeat.Size = new System.Drawing.Size(75, 23);
             this.repeat.TabIndex = 6;
@@ -124,11 +125,23 @@
             this.about.UseVisualStyleBackColor = true;
             this.about.Click += new System.EventHandler(this.about_Click);
             // 
+            // previous
+            // 
+            this.previous.Enabled = false;
+            this.previous.Location = new System.Drawing.Point(197, 70);
+            this.previous.Name = "previous";
+            this.previous.Size = new System.Drawing.Size(75, 23);
+            this.previous.TabIndex = 8;
+            this.previous.Text = "Předchozí";
+            this.previous.UseVisualStyleBackColor = true;
+            this.previous.Click += new System.EventHandler(this.previous_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 261);
+            this.ClientSize = new System.Drawing.Size(279, 259);
+            this.Controls.Add(this.previous);
             this.Controls.Add(this.about);
             this.Controls.Add(this.repeat);
             this.Controls.Add(this.settings);
@@ -157,6 +170,7 @@
         private System.Windows.Forms.Button repeat;
         private System.Windows.Forms.Button about;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button previous;
     }
 }
 

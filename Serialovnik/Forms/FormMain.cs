@@ -79,18 +79,21 @@ namespace Serialovnik.Forms
             {
                 random.Enabled = true;
                 goOn.Enabled = false;
+                previous.Enabled = false;
                 repeat.Enabled = false;
             }
             else if (serials.SelectedItems.Count == 1)
             {
                 random.Enabled = true;
                 goOn.Enabled = true;
+                previous.Enabled = true;
                 repeat.Enabled = true;
             }
             else
             {
                 random.Enabled = false;
                 goOn.Enabled = false;
+                previous.Enabled = false;
                 repeat.Enabled = false;
             }
         }
@@ -112,6 +115,11 @@ namespace Serialovnik.Forms
         private void about_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Seriálovník\n\n27.6.2014\nJan Bareš\njanbares43@gmail.com");
+        }
+
+        private void previous_Click(object sender, EventArgs e)
+        {
+            App.Previous(serials.SelectedItem.ToString());
         }
     }
 }

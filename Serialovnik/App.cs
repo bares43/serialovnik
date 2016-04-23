@@ -208,6 +208,46 @@ namespace Serialovnik
             }
         }
 
+        public void Previous(string name)
+        {
+            var serial = Config.Serials.First(s => s.Name.Equals(name));
+            var episodes = ScanFiles(serial.Path);
+
+            if (episodes.Count > 0)
+            {
+                string episodeToPlay = null;
+                if (string.IsNullOrEmpty(serial.Last))
+                {
+                    episodeToPlay = episodes[0];
+                }
+                else
+                {
+                    var i = episodes.IndexOf(serial.Last);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Všechny epizody byly přehrány. Začnu od začátku.");
+                        episodeToPlay = episodes[0];
+                    }
+                    else
+                    {
+                        episodeToPlay = episodes[i - 1];
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(episodeToPlay))
+                {
+                    serial.Last = episodeToPlay;
+                    Play(episodeToPlay);
+                    SaveConfig();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Žádné epizody k přehrání.");
+            }
+        }
+
         public void Repeat(string name)
         {
             var serial = Config.Serials.First(s => s.Name.Equals(name));
