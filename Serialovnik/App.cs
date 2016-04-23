@@ -297,5 +297,10 @@ namespace Serialovnik
         {
             new FormAdd(this).Show();
         }
+
+        public void OpenAbout()
+        {
+            MessageBox.Show("Seriálovník 2\n\n23.4.2016\nJan Bareš\njanbares43@gmail.com");
+        }
     }
 }

@@ -154,7 +154,7 @@
             this.MaximumSize = new System.Drawing.Size(295, 300);
             this.MinimumSize = new System.Drawing.Size(295, 300);
             this.Name = "FormMain";
-            this.Text = "Seriálovník";
+            this.Text = "Seriálovník 2";
             this.ResumeLayout(false);
 
         }
