@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialovnik
+namespace Serialovnik.Forms
 {
     public partial class FormPopup : Form
     {

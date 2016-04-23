@@ -1,4 +1,4 @@
-﻿namespace Serialovnik
+﻿namespace Serialovnik.Forms
 {
     partial class FormMain
     {

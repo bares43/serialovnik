@@ -8,24 +8,25 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace Serialovnik
+namespace Serialovnik.Forms
 {
     public partial class FormAdd : Form
     {
         FormMain formMain;
+        private App App { get; }
 
-        public FormAdd(FormMain formMain)
+        public FormAdd(App app)
         {
             InitializeComponent();
-            this.formMain = formMain;
+            App = app;
         }
 
         private void browse_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            var dialog = new FolderBrowserDialog();
             dialog.ShowDialog();
             path.Text = dialog.SelectedPath;
-            Match match = Regex.Match(path.Text, @"\\[^\\]+$");
+            var match = Regex.Match(path.Text, @"\\[^\\]+$");
             if (match.Value.Length > 1)
             {
                 name.Text = match.Value.Substring(1);
@@ -36,7 +37,7 @@ namespace Serialovnik
         {
             if (name.Text.Length > 0 && path.Text.Length > 0)
             {
-                formMain.addSerial(name.Text, path.Text);
+                App.AddSerial(name.Text, path.Text);
                 this.Close();
             }
             else

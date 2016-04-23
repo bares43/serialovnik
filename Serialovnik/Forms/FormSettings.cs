@@ -8,24 +8,23 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace Serialovnik
+namespace Serialovnik.Forms
 {
     public partial class FormSettings : Form
     {
-        FormMain formMain;
+        private App App { get; }
 
-        public FormSettings(FormMain formMain)
+        public FormSettings(App app)
         {
             InitializeComponent();
-            this.formMain = formMain;
+            this.App = app;
 
-            XmlElement player = (XmlElement)formMain.rootXmlElement;
-            XmlElement player2 = (XmlElement)player.GetElementsByTagName("player")[0];
-            path.Text = player2.GetElementsByTagName("path")[0].InnerText;
-            if (player2.GetElementsByTagName("params")[0].InnerText.Length > 0)
+            if (App.Config.Player != null)
             {
-                prms.Text = player2.GetElementsByTagName("params")[0].InnerText;
+                path.Text = App.Config.Player.Path;
+                prms.Text = App.Config.Player.Arguments;
             }
+            
         }
 
         private void browse_Click(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace Serialovnik
         {
             if (path.Text.Length > 0 && prms.Text.Length > 0)
             {
-                formMain.setPlayer(path.Text, prms.Text);
+                App.SetPlayer(path.Text, prms.Text);
                 this.Close();
             }
             else
