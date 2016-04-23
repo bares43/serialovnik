@@ -34,14 +34,17 @@
             this.prms = new System.Windows.Forms.TextBox();
             this.browse = new System.Windows.Forms.Button();
             this.ok = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.showPlayPopup = new System.Windows.Forms.CheckBox();
+            this.timeout = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Přehrávač";
             // 
@@ -50,7 +53,7 @@
             this.path.AutoSize = true;
             this.path.Location = new System.Drawing.Point(75, 9);
             this.path.Name = "path";
-            this.path.Size = new System.Drawing.Size(0, 13);
+            this.path.Size = new System.Drawing.Size(0, 15);
             this.path.TabIndex = 1;
             // 
             // label3
@@ -58,7 +61,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(63, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Parametry";
             // 
@@ -66,13 +69,13 @@
             // 
             this.prms.Location = new System.Drawing.Point(78, 31);
             this.prms.Name = "prms";
-            this.prms.Size = new System.Drawing.Size(292, 20);
+            this.prms.Size = new System.Drawing.Size(211, 20);
             this.prms.TabIndex = 3;
             this.prms.Text = "{FILE} --fullscreen vlc://quit";
             // 
             // browse
             // 
-            this.browse.Location = new System.Drawing.Point(214, 57);
+            this.browse.Location = new System.Drawing.Point(295, 29);
             this.browse.Name = "browse";
             this.browse.Size = new System.Drawing.Size(75, 23);
             this.browse.TabIndex = 4;
@@ -82,7 +85,7 @@
             // 
             // ok
             // 
-            this.ok.Location = new System.Drawing.Point(295, 57);
+            this.ok.Location = new System.Drawing.Point(295, 174);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
             this.ok.TabIndex = 5;
@@ -90,11 +93,40 @@
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Doba zobrazení popupu (v ms)";
+            // 
+            // showPlayPopup
+            // 
+            this.showPlayPopup.AutoSize = true;
+            this.showPlayPopup.Location = new System.Drawing.Point(19, 57);
+            this.showPlayPopup.Name = "showPlayPopup";
+            this.showPlayPopup.Size = new System.Drawing.Size(174, 19);
+            this.showPlayPopup.TabIndex = 8;
+            this.showPlayPopup.Text = "Zobrazit popup při spuštění";
+            this.showPlayPopup.UseVisualStyleBackColor = true;
+            // 
+            // timeout
+            // 
+            this.timeout.Location = new System.Drawing.Point(197, 91);
+            this.timeout.Name = "timeout";
+            this.timeout.Size = new System.Drawing.Size(100, 20);
+            this.timeout.TabIndex = 9;
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 89);
+            this.ClientSize = new System.Drawing.Size(382, 209);
+            this.Controls.Add(this.timeout);
+            this.Controls.Add(this.showPlayPopup);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ok);
             this.Controls.Add(this.browse);
             this.Controls.Add(this.prms);
@@ -102,8 +134,8 @@
             this.Controls.Add(this.path);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(398, 127);
-            this.MinimumSize = new System.Drawing.Size(398, 127);
+            this.MaximumSize = new System.Drawing.Size(398, 250);
+            this.MinimumSize = new System.Drawing.Size(398, 250);
             this.Name = "FormSettings";
             this.Text = "Nastavení";
             this.ResumeLayout(false);
@@ -119,5 +151,8 @@
         private System.Windows.Forms.TextBox prms;
         private System.Windows.Forms.Button browse;
         private System.Windows.Forms.Button ok;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox showPlayPopup;
+        private System.Windows.Forms.TextBox timeout;
     }
 }

@@ -14,7 +14,7 @@ namespace Serialovnik.Forms
 
         Timer t1;
 
-        public FormPopup(string msg)
+        public FormPopup(string msg, int interval)
         {
             InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace Serialovnik.Forms
 
             t1 = new Timer();
             t1.Tick += t1_Tick;
-            t1.Interval = 5000; 
+            t1.Interval = interval; 
             t1.Start();
         }
 

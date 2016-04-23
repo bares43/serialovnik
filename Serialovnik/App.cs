@@ -72,9 +72,12 @@ namespace Serialovnik
 
         }
 
-        public static void ShowPopup(string message)
+        public void ShowPopup(string message)
         {
-            new FormPopup(message).ShowDialog();
+            if (Config.ShowPlayPopup)
+            {
+                new FormPopup(message, Config.PlayPopupInterval).ShowDialog();
+            }
         }
 
         public void AddSerial(string name, string path)

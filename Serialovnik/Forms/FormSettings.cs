@@ -24,7 +24,10 @@ namespace Serialovnik.Forms
                 path.Text = App.Config.Player.Path;
                 prms.Text = App.Config.Player.Arguments;
             }
-            
+
+            showPlayPopup.Checked = App.Config.ShowPlayPopup;
+            timeout.Text = App.Config.PlayPopupInterval.ToString();
+
         }
 
         private void browse_Click(object sender, EventArgs e)
@@ -43,13 +46,15 @@ namespace Serialovnik.Forms
             if (path.Text.Length > 0 && prms.Text.Length > 0)
             {
                 App.SetPlayer(path.Text, prms.Text);
-                this.Close();
             }
-            else
-            {
-                MessageBox.Show("Zvolte cestu k přehrávači a jeho parametry.");
-            }
-        }
 
+            App.Config.ShowPlayPopup = showPlayPopup.Checked;
+            App.Config.PlayPopupInterval = int.Parse(timeout.Text);
+
+            App.SaveConfig();
+
+            this.Close();
+        }
+        
     }
 }

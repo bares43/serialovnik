@@ -23,6 +23,8 @@ namespace Serialovnik.Settings
             set { _player = value; }
         }
 
+        public bool ShowPlayPopup { get; set; } = true;
+        public int PlayPopupInterval { get; set; } = 5000;
     }
 
   
