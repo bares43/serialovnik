@@ -55,6 +55,5 @@ namespace Serialovnik.Forms
 
             this.Close();
         }
-        
     }
 }

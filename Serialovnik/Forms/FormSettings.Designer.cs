@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.showPlayPopup = new System.Windows.Forms.CheckBox();
             this.timeout = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 91);
+            this.label4.Location = new System.Drawing.Point(12, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 15);
             this.label4.TabIndex = 7;
@@ -105,7 +106,7 @@
             // showPlayPopup
             // 
             this.showPlayPopup.AutoSize = true;
-            this.showPlayPopup.Location = new System.Drawing.Point(19, 57);
+            this.showPlayPopup.Location = new System.Drawing.Point(15, 83);
             this.showPlayPopup.Name = "showPlayPopup";
             this.showPlayPopup.Size = new System.Drawing.Size(174, 19);
             this.showPlayPopup.TabIndex = 8;
@@ -114,16 +115,26 @@
             // 
             // timeout
             // 
-            this.timeout.Location = new System.Drawing.Point(197, 91);
+            this.timeout.Location = new System.Drawing.Point(193, 105);
             this.timeout.Name = "timeout";
             this.timeout.Size = new System.Drawing.Size(100, 20);
             this.timeout.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(357, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Je potřeba zadat {FILE}, které bude nahrazeno názvem souboru.";
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 209);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.timeout);
             this.Controls.Add(this.showPlayPopup);
             this.Controls.Add(this.label4);
@@ -154,5 +165,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox showPlayPopup;
         private System.Windows.Forms.TextBox timeout;
+        private System.Windows.Forms.Label label2;
     }
 }
