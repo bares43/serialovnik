@@ -39,6 +39,7 @@
             this.about = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.previous = new System.Windows.Forms.Button();
+            this.settingsSerial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // serials
@@ -47,7 +48,7 @@
             this.serials.Location = new System.Drawing.Point(12, 12);
             this.serials.Name = "serials";
             this.serials.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.serials.Size = new System.Drawing.Size(179, 238);
+            this.serials.Size = new System.Drawing.Size(179, 264);
             this.serials.TabIndex = 0;
             this.serials.SelectedIndexChanged += new System.EventHandler(this.serials_SelectedIndexChanged);
             this.serials.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.serials_MouseDoubleClick);
@@ -76,7 +77,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(197, 140);
+            this.add.Location = new System.Drawing.Point(197, 166);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             // remove
             // 
-            this.remove.Location = new System.Drawing.Point(197, 169);
+            this.remove.Location = new System.Drawing.Point(197, 195);
             this.remove.Name = "remove";
             this.remove.Size = new System.Drawing.Size(75, 23);
             this.remove.TabIndex = 4;
@@ -96,7 +97,7 @@
             // 
             // settings
             // 
-            this.settings.Location = new System.Drawing.Point(197, 198);
+            this.settings.Location = new System.Drawing.Point(197, 224);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(75, 23);
             this.settings.TabIndex = 5;
@@ -117,7 +118,7 @@
             // 
             // about
             // 
-            this.about.Location = new System.Drawing.Point(197, 227);
+            this.about.Location = new System.Drawing.Point(197, 253);
             this.about.Name = "about";
             this.about.Size = new System.Drawing.Size(75, 23);
             this.about.TabIndex = 7;
@@ -136,11 +137,23 @@
             this.previous.UseVisualStyleBackColor = true;
             this.previous.Click += new System.EventHandler(this.previous_Click);
             // 
+            // settingsSerial
+            // 
+            this.settingsSerial.Enabled = false;
+            this.settingsSerial.Location = new System.Drawing.Point(198, 129);
+            this.settingsSerial.Name = "settingsSerial";
+            this.settingsSerial.Size = new System.Drawing.Size(75, 23);
+            this.settingsSerial.TabIndex = 9;
+            this.settingsSerial.Text = "Seriál";
+            this.settingsSerial.UseVisualStyleBackColor = true;
+            this.settingsSerial.Click += new System.EventHandler(this.settingsSerial_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 259);
+            this.ClientSize = new System.Drawing.Size(279, 281);
+            this.Controls.Add(this.settingsSerial);
             this.Controls.Add(this.previous);
             this.Controls.Add(this.about);
             this.Controls.Add(this.repeat);
@@ -151,8 +164,8 @@
             this.Controls.Add(this.random);
             this.Controls.Add(this.serials);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(295, 300);
-            this.MinimumSize = new System.Drawing.Size(295, 300);
+            this.MaximumSize = new System.Drawing.Size(295, 320);
+            this.MinimumSize = new System.Drawing.Size(295, 320);
             this.Name = "FormMain";
             this.Text = "Seriálovník 2";
             this.ResumeLayout(false);
@@ -171,6 +184,7 @@
         private System.Windows.Forms.Button about;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button previous;
+        private System.Windows.Forms.Button settingsSerial;
     }
 }
 

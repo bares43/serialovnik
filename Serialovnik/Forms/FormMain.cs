@@ -81,6 +81,7 @@ namespace Serialovnik.Forms
                 goOn.Enabled = false;
                 previous.Enabled = false;
                 repeat.Enabled = false;
+                settingsSerial.Enabled = false;
             }
             else if (serials.SelectedItems.Count == 1)
             {
@@ -88,6 +89,7 @@ namespace Serialovnik.Forms
                 goOn.Enabled = true;
                 previous.Enabled = true;
                 repeat.Enabled = true;
+                settingsSerial.Enabled = true;
             }
             else
             {
@@ -95,6 +97,7 @@ namespace Serialovnik.Forms
                 goOn.Enabled = false;
                 previous.Enabled = false;
                 repeat.Enabled = false;
+                settingsSerial.Enabled = false;
             }
         }
 
@@ -120,6 +123,11 @@ namespace Serialovnik.Forms
         private void previous_Click(object sender, EventArgs e)
         {
             App.Previous(serials.SelectedItem.ToString());
+        }
+
+        private void settingsSerial_Click(object sender, EventArgs e)
+        {
+            App.OpenSettingsSerial(serials.SelectedItem.ToString());
         }
     }
 }

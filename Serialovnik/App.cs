@@ -22,7 +22,7 @@ namespace Serialovnik
 
         public event SerialsListChangedDelegate SerialsListChanged;
 
-        private void NotifySerialsListChanged()
+        public void NotifySerialsListChanged()
         {
             SerialsListChanged?.Invoke();
         }
@@ -301,6 +301,11 @@ namespace Serialovnik
         public void OpenAbout()
         {
             MessageBox.Show("Seriálovník 2\n\n23.4.2016\nJan Bareš\njanbares43@gmail.com");
+        }
+
+        public void OpenSettingsSerial(string serialName)
+        {
+            new FormSettingsSerial(this, serialName).Show();
         }
     }
 }
