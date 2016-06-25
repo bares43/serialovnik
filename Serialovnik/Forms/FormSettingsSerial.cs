@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Serialovnik.Settings;
 
@@ -22,6 +23,7 @@ namespace Serialovnik.Forms
             App = app;
             Serial = App.Config.Serials.First(s => s.Name.Equals(serialName));
             name.Text = Serial.Name;
+            path.Text = Serial.Path;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -33,6 +35,15 @@ namespace Serialovnik.Forms
                 App.NotifySerialsListChanged();
                 this.Close();
             }
+        }
+
+        private void browse_Click(object sender, EventArgs e)
+        {
+            var dialog = new FolderBrowserDialog();
+            dialog.ShowDialog();
+            path.Text = dialog.SelectedPath;
+            Serial.Path = path.Text;
+            Serial.Last = null;
         }
     }
 }
